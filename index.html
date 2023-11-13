@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Connect to Wi-Fi and Open URL</title>
+</head>
+<body>
+<script>
+function connectToWifiAndOpenURL() {
+  var ssid = "HaaSni_GB";
+  var password = "Palaa@2110";
+  var network = new WifiConfiguration({ssid, password});
+  navigator.network.connectToWifi(network, function(success) {
+    if (success) {
+      // Open the URL
+      var url = "https://natashacheri.github.io/";
+      window.location.href = url;
+    } else {
+      alert("Failed to connect to Wi-Fi");
+    }
+  });
+}
+</script>
+<button onclick="connectToWifiAndOpenURL()">Connect to Wi-Fi and Open URL</button>
+</body>
+</html>
