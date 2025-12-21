@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshmi Snigdha Paladugula</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 14px 10px;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 14px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 920px;
+  margin: auto;
+  padding: 90px 20px 60px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #0f172a;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: #2563eb;
+  margin-top: 6px;
+  border-radius: 4px;
+}
+
+/* ===== HOME ===== */
+#home {
+  text-align: center;
+  padding-top: 160px;
+  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #475569;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  border-left: 5px solid #2563eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== EXPERIENCE FILTER ===== */
+
+.filters {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.filter-btn {
+  background: #e0ecff;
+  border: none;
+  color: #2563eb;
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== LINKS ===== */
+
+#contact {
+  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+}
+
+a {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 26px;
+  background: #f1f5f9;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 36px; }
+  h2 { font-size: 24px; }
+  nav ul li { margin: 6px 10px; }
+}
+
+/* ===== PROJECT ACTION BUTTONS ===== */
+.project-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.project-btn.secondary {
+  background: #e0ecff;
+  color: #2563eb;
+}
+
+.project-btn:hover {
+  background: #1d4ed8;
+}
+
+.project-btn.secondary:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== PROJECT DETAILS (HIDDEN) ===== */
+.project-details {
+  display: none;
+  margin-top: 14px;
+  padding-left: 16px;
+  border-left: 3px solid #2563eb;
+  color: #334155;
+  font-size: 15px;
+}
+
+#skills {
+    max-width: 920px;
+    margin: auto;
+    padding: 60px 20px;
+  }
+
+  #skills h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+
+  .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* space between boxes */
+}
+
+.skill {
+  flex: 1 1 150px; /* grow, shrink, basis */
+  max-width: 150px;
+  min-width: 150px;
+  height: 50px; /* fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* light gray background */
+  color: #111827; /* text color */
+  font-weight: 500;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill:hover {
+  background: #1f2937;   /* fill on hover */
+  color: #ffffff;        /* text turns white */
+  transform: translateY(-2px);
+}
+
+ #contact h2 {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+#contact h2::after {
+  content: none;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+/* ===== SECTION SCROLL ARROW ===== */
+.section-arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  opacity: 0.6;
+  animation: bounce 1.6s infinite;
+}
+
+.section-arrow span {
+  font-size: 26px;
+  color: #2563eb;
+}
+
+/* Hide arrow for last section */
+#contact .section-arrow {
+  display: none;
+}
+
+/* Subtle bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2563eb; /* Blue button */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+
+  .contact-btn:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+  }
+</style>
+</head>
+
+<script>
+function toggleDetails(id) {
+  const details = document.getElementById(id);
+  details.style.display =
+    details.style.display === "block" ? "none" : "block";
+}
+
+function scrollToNextSection(arrow) {
+  const currentSection = arrow.closest("section");
+  const nextSection = currentSection.nextElementSibling;
+
+  if (nextSection && nextSection.tagName === "SECTION") {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+</script>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home">
+  <h1>Lakshmi Snigdha Paladugula</h1>
+  <p class="subtitle">
+    Computer Science Graduate • Software Engineer • Machine Learning • Data Science
+  </p>
+  <p>
+  I’m a Master’s student in Computer Science at UT Austin with a strong interest in
+  building scalable systems, data-driven applications, and intelligent infrastructure.
+  My work sits at the intersection of distributed systems, machine learning, and database
+  systems, with a particular focus on designing efficient, reliable, and real-world–ready solutions.
+  </p>
+
+    <p>
+  Previously, I worked as a Software Engineering Professional at BT Group, where I contributed
+  to production-grade systems, and as a Data Analysis Intern at Intel Corporation, where I
+  worked on large-scale data analysis and visualization. Alongside industry experience, I
+  have been deeply involved in academia as a Teaching Assistant for Big Data Analytics at PES
+  University, mentoring students on machine learning and data engineering projects, and I
+  have authored multiple IEEE publications focused on applied machine learning and analytics.
+</p>
+
+<p>
+  I am particularly motivated by problems that lie at the intersection of systems and AI,
+  and I aspire to build technologies that are scalable, impactful, and grounded in strong
+  engineering and research principles.
+</p>
+
+<div class="section-arrow" onclick="scrollToNextSection(this)">
+  <span>⌄</span>
+</div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="card">
+    <strong>Master of Science in Computer Science</strong><br>
+    University of Texas at Austin<br>
+    <em>August 2025 – May 2027</em><br>
+    <strong>GPA:</strong> 4/4 <br>
+    <strong>Relevant Coursework:</strong>
+    Database Systems and LLMs, Approximate Algorithms and Complexity, Statistical Methods
+  </div>
+
+  <div class="card">
+    <strong>Bachelor of Technology in Computer Science and Engineering</strong><br>
+    PES University, India<br>
+    <em>December 2020 – June 2024</em><br>
+    <strong>GPA:</strong> 9.54/10, Ranked in the top 5% of CSE department, received 6 scholarships, 5 research papers<br>
+    <strong>Relevant Coursework:</strong>
+    Data Structures and Algorithms, Object Oriented Design and Analysis, Big Data Analytics,
+    Machine Learning, Database Management Systems, Operating Systems, Computer Networks,
+    Software Engineering, Reinforcement Learning
+  </div>
+  <div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+  </div>
+
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterExperience('all', this)">All</button>
+    <button class="filter-btn" onclick="filterExperience('corporate', this)">Corporate</button>
+    <button class="filter-btn" onclick="filterExperience('academic', this)">Academic</button>
+    <button class="filter-btn" onclick="filterExperience('leadership', this)">Leadership</button>
+  </div>
+
+  <div class="card experience-card" data-category="corporate">
+    <strong>BT Group</strong> — Software Engineering Professional
+    <p>As a backend developer at BT Group, I designed and maintained scalable backend services using Java and Netflix Conductor, ensuring seamless API integration and contributing to post-order orchestration in collaboration with cross-functional teams. I also worked on security authorization for Netflix Conductor, gaining hands-on experience with Kubernetes and Vault, while improving code coverage and developing model classes for a new service.</p>
+  </div>
+
+  <div class="card experience-card" data-category="corporate">
+    <strong>Intel Corporation</strong> — Data Analysis Intern
+    <p>As a Data Science Intern, I analyzed geo-spatial datasets to uncover traffic patterns in major Indian cities using statistical and data mining techniques, creating insightful visualizations with QGIS and Kepler.io to support urban planning and identify congestion trends. Additionally, I developed and executed automated test scripts with Selenium WebDriver, conducting extensive testing to evaluate LLM performance and ensure the stability, accuracy, and quality of web applications.</p>
+  </div>
+
+  <div class="card experience-card" data-category="academic">
+    <strong>PES University</strong> — Teaching Assistant, Big Data Analytics
+    <p>As a Teaching Assistant for the Big Data course at PES University, I designed and developed course slides, and created and evaluated assignments to support student learning. I also assisted students in research projects, guiding them through data analysis and implementation. Additionally, I delivered an orientation session for third-semester students on the industry relevance of Big Data Analytics and its impact on Machine Learning, fostering interest and understanding of real-world applications.</p>
+  </div>
+
+  <div class="card experience-card" data-category="academic">
+    <strong>AceMicromatic Group </strong> — Research Intern
+    <p>At AceMicromatic, I developed an interactive user interface that enables clients to visualize data through dynamic dashboards, enhancing analytical insights and decision-making. The interface was built using Pandas, Plotly, and Dash, providing an intuitive and efficient way to explore key performance metrics.</p>
+  </div>
+
+  <div class="card experience-card" data-category="leadership">
+    <strong>PES University </strong> — Class Representative
+    <p>During my first two years at PES University, I served as a Class Representative, acting as a link between students and faculty. I gathered academic and administrative concerns from my classmates and raised them in meetings with professors. I worked toward resolving these issues through constructive discussions and ensured updates were communicated back to the class.</p>
+  </div>
+
+  <div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <h2>Projects</h2>
+
+    <div class="card">
+  <strong>Lightweight LLM Selection System</strong>
+  <p>
+    Currently developing a system leveraging a baseline LLM (Ollama) to select the most suitable lightweight model for a given task by balancing accuracy and latency based on user-defined constraints.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('llm-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Leveraging-LLMs-for-Lightweight-Execution-in-Unstructured-Data-Analysis"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="llm-details" class="project-details">
+  <strong>Project Details:</strong>
+  <ul>
+    <li>Designed a system to automatically select the optimal lightweight LLM for specific tasks based on user-defined constraints.</li>
+    <li>Leveraged a baseline LLM (Ollama) to benchmark and compare candidate models on accuracy and latency.</li>
+    <li>Implemented a performance evaluation module to balance trade-offs between speed and predictive performance.</li>
+    <li>Developing an interface for users to input constraints and receive recommendations for the best model.</li>
+    <li>Built the framework to support multiple NLP tasks, including sentiment classification on IMDB movie reviews.</li>
+    <li>Enabled semantic search on the IMDB dataset to evaluate contextual understanding and retrieval quality.</li>
+    <li>Integrated text summarization capabilities using the CNN/DailyMail dataset.</li>
+    <li>Added language detection support using multilingual data from Wikipedia.</li>
+    <li>Focused on creating a scalable and adaptable system that can efficiently support multiple LLM architectures and tasks.</li>
+  </ul>
+</div>
+
+</div>
+
+  <div class="card">
+  <strong>Just Map It: Indoor Navigation System</strong>
+  <p>
+    Built an indoor navigation web application using Python, Django, OpenCV, and
+    Streamlit, implementing a virtual positioning system that improved navigation
+    speed by 60% in indoor environments such as grocery stores. The project was
+    recognized as a Top 10 project at PES University’s Capstone Fair (2023).
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('justmapit-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Just-Map-It"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="justmapit-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Designed an end-to-end indoor navigation system to address the limitations of GPS in enclosed environments by leveraging Indoor Positioning System (IPS) techniques.</li>
+      <li>Implemented efficient path-finding algorithms over a structured indoor map database tailored for store-specific layouts.</li>
+      <li>Developed a web-based, login-free user service supported by local network-based APIs, enabling seamless indoor navigation and user assistance.</li>
+      <li>Integrated analytical features to monitor navigation behavior, system performance, and path efficiency.</li>
+      <li>Architected a scalable network and database design to support real-time navigation within indoor environments.</li>
+      <li>Tested and evaluated the path-finding algorithm to analyze performance, identify bottlenecks, and highlight areas for improvement.</li>
+      <li>Proposed the system as a reusable template for store-like environments, enabling digitization of indoor navigation using robust and accurate IPS techniques.</li>
+      <li>Authored a research paper detailing the system architecture, algorithms, performance evaluation, and real-world applicability of indoor navigation solutions.</li>
+    </ul>
+  </div>
+</div>
+
+
+  <div class="card">
+  <strong>Black Hole Prediction in Globular Star Clusters</strong>
+  <p>
+    Applied machine learning and data analytics techniques to predict black hole
+    systems and estimate their masses using astronomical datasets.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('blackhole-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/BHDetection_GlobularClusters"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="blackhole-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Used machine learning models including K-Nearest Neighbors (KNN), XGBoost, Random Forest, and Particle Swarm Optimization for predictive modeling of black hole systems.</li>
+      <li>Analyzed astronomical datasets from globular star clusters to identify potential black hole candidates and estimate their masses.</li>
+      <li>Performed correlation analysis and feature selection to improve model accuracy and interpretability.</li>
+      <li>Developed data preprocessing pipelines to handle noisy and high-dimensional astrophysical data.</li>
+      <li>Visualized predictions and correlations to provide scientific insights into black hole distributions in globular clusters.</li>
+      <li>Results contributed to a research paper presented at APCIT 2024, highlighting the potential of data-driven approaches in astrophysics.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>Breast Cancer Detection</strong>
+  <p>
+    Developed and deployed a CNN-based medical image classification system for
+    breast cancer detection using histopathological images, achieving
+    approximately 95% accuracy.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('breast-cancer-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Hack-O-Uplift"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="breast-cancer-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Built a breast cancer detection model using Convolutional Neural Networks (CNNs) trained on the BreakHis histopathological image dataset.</li>
+      <li>Implemented the DenseNet201 architecture, leveraging transfer learning for high-performance medical image classification.</li>
+      <li>Designed a robust model architecture with 18.3M parameters, incorporating global average pooling, batch normalization, and dropout layers to improve generalization.</li>
+      <li>Optimized training using the Adam optimizer and softmax activation for multi-class classification, achieving ~95% accuracy.</li>
+      <li>Developed a Flask-based web application to deploy the model, allowing users to upload histopathological images and receive real-time predictions.</li>
+      <li>Created a clean HTML/CSS frontend to visualize prediction results, improving usability for non-technical users.</li>
+      <li>Presented the project at a national-level hackathon with 300+ teams, where it was selected among the Top 10 teams.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>Mini-Kafka: Real-Time Data Pipeline</strong>
+  <p>
+    Independently built a real-time data streaming pipeline using Python, Kafka,
+    WebSockets, and Zookeeper, ensuring reliable message delivery and fault tolerance.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('minikafka-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Yet-Another-Kafka"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="minikafka-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Designed and implemented a real-time data streaming pipeline using Kafka for message brokering and Zookeeper for cluster coordination.</li>
+      <li>Integrated WebSockets for live data transmission to client applications, ensuring minimal latency.</li>
+      <li>Implemented fault-tolerant message handling to guarantee reliability even under system failures.</li>
+      <li>Developed data producers and consumers in Python to simulate real-world streaming scenarios.</li>
+      <li>Monitored system performance and optimized throughput to handle high-frequency data streams efficiently.</li>
+      <li>Demonstrated end-to-end data flow with error handling, retry mechanisms, and consistent message delivery, suitable for distributed system applications.</li>
+    </ul>
+  </div>
+</div>
+
+
+   <div class="card">
+  <strong>Depression Analysis (Twitter)</strong>
+  <p>
+    Developed a research-oriented NLP model to detect depression sentiment from Twitter feeds, leveraging machine learning and deep learning techniques for accurate prediction.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('depression-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Depression-Analysis"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="depression-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Orchestrated an NLP pipeline to analyze Twitter feeds and detect signs of depression based on user sentiment and behavior patterns.</li>
+      <li>Collected a large, diverse dataset of tweets using Twint for real-time data scraping.</li>
+      <li>Preprocessed text data using tokenization, stopword removal, and lemmatization to improve model accuracy.</li>
+      <li>Trained and compared multiple models for sentiment prediction, including TF-IDF with SVC, Naïve Bayes, Logistic Regression, and LSTM.</li>
+      <li>Achieved high accuracy (~99.61%) with the LSTM model, demonstrating the effectiveness of deep learning for sentiment analysis.</li>
+      <li>Applied Word2Vec embeddings to enhance semantic understanding, improving detection of depression-related keywords and phrases.</li>
+      <li>Managed the research workflow, including data collection, model evaluation, and presentation of findings on model performance.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>Teen Talk: Mental Health Platform</strong>
+  <p>
+    Built a mental health website for teens enabling anonymous story sharing using ReactJS, NodeJS, ExpressJS,
+    MongoDB, and custom playlist APIs.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('teentalk-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Teen-Talk"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="teentalk-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Led a team of 4 to develop a platform supporting teens with tools for coping with stress and mental health challenges.</li>
+      <li>Built an interactive and responsive frontend using ReactJS, including a secure login system.</li>
+      <li>Implemented MongoDB to securely store user profiles, hashed passwords, and anonymous story submissions.</li>
+      <li>Enabled anonymous story-sharing to provide a safe space for teens to express experiences and connect with peers.</li>
+      <li>Integrated Spotify APIs to generate mood-based playlists to improve users’ mental well-being.</li>
+      <li>Designed a helpline page connecting users with therapists and providing professional mental health resources.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>Interactive Data Visualization Dashboard</strong>
+  <p>
+    Created a dashboard using Dash, Plotly, and Pandas to visualize CSV data with interactive charts,
+    file uploads, and save/load configurations.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('dashboard-details')">
+      Show Details
+    </button>
+  </div>
+
+  <div id="dashboard-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Developed an interactive user interface at AceMicromatic for clients to visualize data through dynamic dashboards.</li>
+      <li>Built the interface using Pandas, Plotly, and Dash, allowing intuitive exploration of key performance metrics.</li>
+      <li>Enabled file uploads and interactive charting to provide detailed analytical insights.</li>
+      <li>Implemented save/load configuration functionality to maintain user-specific dashboard settings.</li>
+      <li>Enhanced decision-making by providing a real-time, visually informative interface for business analysis.</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="card">
+  <strong>Bakery Management System</strong>
+  <p>
+    Designed and developed a full-stack web-based bakery management system that enables
+    customers to browse menus, place orders, and complete online payments, while providing
+    bakery owners with an administrative interface to manage orders, inventory, and operations
+    in real time.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('bakery-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/bakery-managment-system"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="bakery-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Built a web-based platform allowing customers to browse bakery menus, place orders, and complete secure online payments.</li>
+      <li>Developed a dedicated admin interface for bakery owners to receive, manage, and fulfill customer orders efficiently.</li>
+      <li>Enabled real-time menu, category, and pricing updates with instant reflection on the customer-facing interface.</li>
+      <li>Implemented automated order processing with support for printing orders directly upon receipt.</li>
+      <li>Designed the system to be accessible across devices, allowing customers to order via mobile, tablet, or desktop.</li>
+      <li>Added features to define operating hours, schedule food reservations, and hide unavailable products dynamically.</li>
+      <li>Provided options for eat-in or delivery orders, including estimated preparation times for transparency.</li>
+      <li>Integrated detailed analytics and reporting, offering insights such as daily sales totals and order statistics.</li>
+      <li>Supported multi-store setup, enabling centralized management and control of multiple bakery outlets from a single system.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>Chat Application</strong>
+  <p>
+    Developed a one-on-one chat platform using Java and Spring MVC, implementing the MVC architecture and designing the frontend with AngularJS.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('chatapp-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/ChatApplication-SpringMVC"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="chatapp-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Led a team of 4 developers to build a chat application with real-time messaging, replicating features similar to WhatsApp.</li>
+      <li>Implemented the Model-View-Controller (MVC) architecture for modular and maintainable code.</li>
+      <li>Developed a user-friendly frontend using AngularJS with smooth chat interactions.</li>
+      <li>Built a secure and efficient backend in Java with Spring Boot for handling user requests and real-time messaging.</li>
+      <li>Integrated CRUD operations with MongoDB for efficient message storage and retrieval.</li>
+      <li>Applied design patterns like Singleton and Factory for cleaner, reusable code.</li>
+      <li>Created UML Use Case and Class Diagrams for detailed project documentation.</li>
+      <li>Integrated WebSocket for instant real-time communication without page reloads.</li>
+      <li>Optimized database queries to enhance performance and scalability.</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="card">
+  <strong>Raft Consensus Algorithm</strong>
+  <p>
+    Built a virtualized implementation of the Raft Consensus algorithm, focusing on
+    leader election, RPC-based communication, and fault-tolerant distributed coordination
+    for maintaining consistency across replicated nodes.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('raft-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/Raft_Consensus_Project1_CC"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="raft-details" class="project-details">
+    <strong>Project Details:</strong>
+    <ul>
+      <li>Developed a virtualized implementation of the Raft Consensus algorithm using Python and Go to study distributed consensus and fault tolerance.</li>
+      <li>Implemented leader election mechanisms to ensure a single, consistent leader for coordinating log replication and decision-making.</li>
+      <li>Designed and implemented RPC-based communication between nodes to support heartbeats, log replication, and state synchronization.</li>
+      <li>Built fault-tolerant behavior to gracefully handle node crashes, network partitions, and leader failures.</li>
+      <li>Ensured strong consistency guarantees by maintaining replicated logs across nodes in accordance with the Raft protocol.</li>
+      <li>Simulated and tested multiple failure scenarios to validate recovery behavior and leader re-election under adverse conditions.</li>
+      <li>Analyzed system behavior under different cluster sizes and failure patterns to evaluate robustness and protocol correctness.</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="card">
+  <strong>WeatherWise</strong>
+  <p>
+    Built a mini weather station for chemical experiments, providing real-time
+    environmental monitoring with alerts and a live dashboard.
+  </p>
+
+  <div class="project-actions">
+    <button class="project-btn secondary"
+      onclick="toggleDetails('weatherwise-details')">
+      Show Details
+    </button>
+
+    <a href="https://github.com/snigdha1012/IOT-weather"
+       target="_blank">
+      <button class="project-btn">
+        View Project
+      </button>
+    </a>
+  </div>
+
+  <div id="weatherwise-details" class="project-details">
+  <strong>Project Details:</strong>
+  <ul>
+    <li>Developed a comprehensive weather application in three variants using different technology stacks to provide current and weekly weather insights.</li>
+    <li>Enabled users to search weather by location, add cities to favorites, and quickly retrieve weather information for saved locations.</li>
+    <li>Integrated automatic location detection using the ipinfo.io API to enhance user convenience.</li>
+    <li>Provided detailed weather metrics including temperature, wind speed, humidity, precipitation, UV index, pressure, and sunrise/sunset times.</li>
+    <li>Enhanced user experience with interactive meteograms and weather graphs using the Highcharts API.</li>
+    <li>Implemented Twitter intent integration allowing users to share weather updates for selected cities.</li>
+    <li>Utilized the Tomorrow.io API to fetch current, hourly, and weekly weather data.</li>
+    <li>Integrated Google Geocoding API to convert user-entered addresses into latitude and longitude for accurate weather queries.</li>
+    <li>Used Google Places and Maps APIs for address autocomplete and visualizing user-selected locations on maps.</li>
+    <li>Stored user favorite locations in MongoDB to ensure persistent access across sessions.</li>
+    <li>Implemented robust error handling with clean alerts and modals to manage edge cases and API failures.</li>
+    <li>Ensured full responsiveness across devices using Bootstrap.</li>
+    <li>Deployed all backend services on Google Cloud Platform (GCP) for scalability and reliability.</li>
+    <li><strong>Version 1:</strong> Flask (Python) backend with HTML, CSS, and Bootstrap frontend.</li>
+    <li><strong>Version 2:</strong> Node.js and Express backend with Angular frontend.</li>
+    <li><strong>Version 3:</strong> Android application built in Kotlin with Node.js and Express backend.</li>
+  </ul>
+</div>
+</div>
+
+<div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+</div>
+</section>
+
+<!-- ===== RESEARCH ===== -->
+<section id="research">
+  <h2>Research</h2>
+
+  <div class="card">
+    <strong>Just Map It: Navigation in Indoor Environments</strong><br>
+    IEEE Xplore
+    <p>
+      Proposed an efficient indoor navigation solution that integrates IPS techniques with web‑based services to overcome GPS limitations, using map databases and network APIs to support robust path finding and user assistance in store‑like environments.
+    </p>
+    <a href="https://ieeexplore.ieee.org/document/10576169" target="_blank">
+      <button class="project-btn">View Paper</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <strong>Exploring Black Hole Systems in Globular Clusters: Correlation Analysis and Predictive Modeling</strong><br>
+    IEEE Xplore
+    <p>
+      Conducted correlation analysis on astronomical data to identify features related to black hole systems in globular clusters and trained predictive models to estimate their presence and properties, supporting data‑driven astrophysical insight.
+    </p>
+    <a href="https://ieeexplore.ieee.org/document/10673687" target="_blank">
+      <button class="project-btn">View Paper</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <strong>Predictive Analysis of Restaurant Inventory: A Study on Stocking Items Based on Popularity Trends</strong><br>
+    IEEE Xplore
+    <p>
+      Used sales history and machine learning to forecast inventory needs for restaurants, improving stock accuracy and reducing waste by modeling popularity trends and demand patterns in real‑world operations.
+    </p>
+    <a href="https://ieeexplore.ieee.org/document/10871751" target="_blank">
+      <button class="project-btn">View Paper</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <strong>IPL Cricket Fantasy Team Prediction for Dream11 using Machine Learning</strong><br>
+    ACM - DL
+    <p>
+      Analyzed ball‑by‑ball IPL data with Random Forest, XGBoost, and Linear Regression to predict top performers for Dream11 fantasy contests, improving team selection accuracy and achieving approximately 85% success in selecting key players.
+    </p>
+    <a href="https://dl.acm.org/doi/10.1145/3698062.3698091" target="_blank">
+      <button class="project-btn">View Paper</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <strong>An Assessment of Neural Network Efficacy in Hospital Readmission Prediction for Diabetic Patients</strong><br>
+    IEEE Xplore
+    <p>
+      Evaluated neural network models for predicting readmission risk among diabetic patients, comparing performance metrics to identify models that can assist healthcare providers in early intervention and improved patient outcome prediction.
+    </p>
+    <a href="https://ieeexplore.ieee.org/document/10816853" target="_blank">
+      <button class="project-btn">View Paper</button>
+    </a>
+  </div>
+  <div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+  </div>
+
+</section>
+
+<!-- ===== CERTIFICATES ===== -->
+<section id="certificates">
+  <h2>Certificates</h2>
+
+  <div class="certificates-grid">
+    <div class="card">
+      <strong>Introduction to AI/ML Toolkits with Kubeflow</strong><br>
+      The Linux Foundation<br>
+      Issued Jul 2024 <br><br>
+      <a href="https://www.credly.com/badges/6ce84d73-decd-4376-b36c-00f99aacd84d/public_url" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <strong>AWS Educate Introduction to Cloud 101</strong><br>
+      Amazon Web Services (AWS)<br>
+      Issued Apr 2023 <br><br>
+      <a href="https://drive.google.com/file/d/1KfcTd9hse2g_J-OY8APrENa9BXQeZnlu/view?usp=drive_link" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <strong>A Beginner's Guide to Linux Kernel Development</strong><br>
+      The Linux Foundation<br>
+      Issued Apr 2022 <br><br>
+      <a href="https://www.credly.com/badges/3d81974d-ca50-4af9-8b37-6aedc91cd349/public_url" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <strong>Selenium Basics</strong><br>
+      Great Learning<br>
+      Issued July 2024 <br><br>
+      <a href="https://drive.google.com/file/d/1X3siEKlftAZVNl3lSK_sodttIHJk7Uj2/view?usp=drive_link" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <strong>Top 10 in Hack-o-uplift hackathon</strong><br>
+      GirlScript<br>
+      Issued Sept 2021 <br><br>
+      <a href="https://drive.google.com/file/d/1f3AD-HhRi9eDJApMimaUKTRTbbiDcAeB/view?usp=drive_link" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <strong>Top Capstone Project - Tech Domain</strong><br>
+      PES University<br>
+      Issued Dec 2023 <br><br>
+      <a href="https://drive.google.com/file/d/1BEq7QEKswkLNNZfDa_yZe0d4J6pQ5pn2/view?usp=drive_link" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+     <div class="card">
+      <strong>Scholarships</strong><br>
+      PES University<br><br>
+      <a href="" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+
+     <div class="card">
+      <strong>Publications and Presentations</strong><br>
+      IEEE and ACM<br><br>
+      <a href="https://drive.google.com/file/d/1Iq2WKawYTzU1wlyGijH6fz7YP8fjVlAP/view?usp=drive_link" target="_blank">
+        <button class="project-btn">Show Credential</button>
+      </a>
+    </div>
+  </div>
+  <div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <h2>Skills & Technologies</h2>
+
+  <!-- Programming Languages -->
+  <h3>Programming Languages</h3>
+  <div class="skills-grid">
+    <div class="skill">Python</div>
+    <div class="skill">Java</div>
+    <div class="skill">C++</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">TypeScript</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">SQL</div>
+  </div>
+
+  <!-- Frameworks & Libraries -->
+  <h3>Frameworks & Libraries</h3>
+  <div class="skills-grid">
+    <div class="skill">Django</div>
+    <div class="skill">Spring MVC</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">NumPy</div>
+    <div class="skill">PowerBI</div>
+  </div>
+
+  <!-- Machine Learning & AI -->
+  <h3>Machine Learning & AI</h3>
+<div class="skills-grid">
+  <div class="skill">TensorFlow</div>
+  <div class="skill">PyTorch</div>
+  <div class="skill">Scikit-Learn</div>
+  <div class="skill">Reinforcement Learning</div>
+  <div class="skill">Data Mining</div>
+  <div class="skill">Statistical Models</div>
+  <div class="skill">CNN</div>
+  <div class="skill">XGBoost</div>
+  <div class="skill">Random Forest</div>
+  <div class="skill">NLP</div>
+</div>
+
+  <!-- Databases -->
+  <h3>Databases</h3>
+  <div class="skills-grid">
+    <div class="skill">MongoDB</div>
+    <div class="skill">MySQL</div>
+  </div>
+
+  <!-- Cloud & DevOps -->
+  <h3>Cloud & DevOps</h3>
+  <div class="skills-grid">
+    <div class="skill">Kubernetes</div>
+    <div class="skill">Docker</div>
+    <div class="skill">Cloud Computing</div>
+  </div>
+
+  <!-- Tools & Technologies -->
+  <h3>Tools & Technologies</h3>
+  <div class="skills-grid">
+    <div class="skill">Git</div>
+    <div class="skill">Selenium</div>
+    <div class="skill">Postman</div>
+    <div class="skill">QGIS</div>
+    <div class="skill">Big Data Analytics</div>
+    <div class="skill">Data Analytics</div>
+    <div class="skill">Geospatial Analysis</div>
+    <div class="skill">Visualizations</div>
+    <div class="skill">Web Applications</div>
+    <div class="skill">JUnit</div>
+  </div>
+
+  <!-- Computer Science Concepts -->
+  <h3>CS Concepts</h3>
+  <div class="skills-grid">
+    <div class="skill">Object-Oriented Concepts</div>
+    <div class="skill">Algorithms</div>
+    <div class="skill">Data Structures</div>
+    <div class="skill">Operating Systems</div>
+    <div class="skill">Software Engineering</div>
+  </div>
+
+  <!-- Soft Skills -->
+  <h3>Soft Skills</h3>
+  <div class="skills-grid">
+    <div class="skill">Leadership</div>
+    <div class="skill">Team Management</div>
+    <div class="skill">Agile Development</div>
+    <div class="skill">Research</div>
+    <div class="skill">Technical Writing</div>
+    <div class="skill">Mentoring</div>
+    <div class="skill">Cross-functional Collaboration</div>
+  </div>
+
+  <div class="section-arrow" onclick="scrollToNextSection(this)">
+    <span>⌄</span>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" style="color:#111827; text-align:center; padding:40px 20px;">
+  <h2 style="font-size:2.2rem; margin-bottom:6px;">Let's Connect</h2>
+
+  <p style="margin-bottom:20px; font-size:1rem; color:#9ca3af;">
+    <span style="margin-right:6px;">📍</span> Austin, Texas
+  </p>
+
+  <!-- Main Buttons -->
+  <div style="margin-bottom:18px;">
+    <a href="mailto:snigdha1012@gmail.com"
+       style="display:inline-block; margin:0 6px; padding:12px 26px; color:#1f2937; border-radius:50px; text-decoration:none; font-weight:500; transition:0.3s;">
+       📧 Get in Touch
+    </a>
+
+    <a href="https://docs.google.com/document/d/1--pjhoTnJt660XN_E9W3Ekt2B70CbPQAomTwmztLWcw/edit?tab=t.0" target="_blank"
+       style="display:inline-block; margin:0 6px; padding:12px 26px; color:#1f2937; border-radius:50px; text-decoration:none; font-weight:500; transition:0.3s;">
+       📄 View Resume
+    </a>
+  </div>
+
+  <!-- Social Icons -->
+  <div style="display:flex; justify-content:center; gap:14px;">
+    <a href="https://github.com/snigdha1012" target="_blank"
+       style="padding:10px; border-radius:50%; display:flex; align-items:center; justify-content:center; width:44px; height:44px; transition:0.3s;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+            alt="GitHub" style="width:22px; height:22px;"/>
+    </a>
+
+    <a href="https://www.linkedin.com/in/snigdha-paladugula-0398b9202/" target="_blank"
+       style="padding:10px; border-radius:50%; display:flex; align-items:center; justify-content:center; width:44px; height:44px; transition:0.3s;">
+       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+            alt="LinkedIn" style="width:22px; height:22px;"/>
+    </a>
+  </div>
+</section>
+<!-- ===== FILTER SCRIPT ===== -->
+<script>
+function filterExperience(category, button) {
+  const cards = document.querySelectorAll(".experience-card");
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+
+  cards.forEach(card => {
+    card.style.display =
+      category === "all" || card.dataset.category === category
+        ? "block"
+        : "none";
+  });
+}
+</script>
+
+</body>
+</html>
